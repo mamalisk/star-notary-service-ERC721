@@ -33,7 +33,7 @@ contract StarNotary is ERC721 {
     * @param dec The dec of the star
     * @param mag The mag of the star
     */
-    function createStar(string name, string story,  string ra, string dec, string mag) public {
+    function createStar(string name, string story,  string ra, string dec, string mag) public returns (uint256) {
         tokenCount++;
         uint256 tokenId = tokenCount;
 
@@ -56,12 +56,18 @@ contract StarNotary is ERC721 {
 
         _mint(msg.sender, tokenId);
         emit StarCreated(name);
+
+        return tokenId;
     }
 
     function putStarUpForSale(uint256 tokenId, uint256 price) public { 
         require(this.ownerOf(tokenId) == msg.sender);
 
         starsForSale[tokenId] = price;
+    }
+
+    function getOwnerOf(uint256 tokenId) public view returns (address) {
+        return this.ownerOf(tokenId);
     }
 
     function buyStar(uint256 tokenId) public payable { 

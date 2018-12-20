@@ -573,7 +573,7 @@
                     const account = accounts[0]
                     const tokenId = document.getElementById("queryById").value
                     
-                    starNotary.tokenIdToStarInfo.call(tokenId, function(error, result) {
+                    starNotary.tokenIdToStarInfo.call(Number(tokenId), function(error, result) {
                         if (!error) {
                             alert(result)
                             document.getElementById("result").value = result

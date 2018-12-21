@@ -5,6 +5,12 @@
 https://review.udacity.com/#!/rubrics/2297/view
 
 
+###
+
+Called putUpForSale successfully: Here's the transaction:
+
+https://rinkeby.etherscan.io/tx/0x452c69c8c3cc49d8faa7c7bf7737c8f5a42ed6f970ebac07c87a667df6556d3f 
+
 Using network 'rinkeby'.
 
 Running migration: 1_initial_migration.js
